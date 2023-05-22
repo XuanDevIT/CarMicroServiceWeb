@@ -14,6 +14,8 @@ import org.springframework.stereotype.Service;
 /**
  * Implements the pricing service to get prices for each vehicle.
  */
+
+@Service
 public class PricingService {
 
     /**
