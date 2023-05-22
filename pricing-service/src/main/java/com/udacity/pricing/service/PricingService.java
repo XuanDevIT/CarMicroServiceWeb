@@ -9,6 +9,8 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 import java.util.stream.LongStream;
 
+import org.springframework.stereotype.Service;
+
 /**
  * Implements the pricing service to get prices for each vehicle.
  */
@@ -19,7 +21,7 @@ public class PricingService {
      */
     private static final Map<Long, Price> PRICES = LongStream
             .range(1, 20)
-            .mapToObj(i -> new Price("USD", randomPrice(), i))
+            .mapToObj(i -> new Price(i, randomPrice(), "USD"))
             .collect(Collectors.toMap(Price::getVehicleId, p -> p));
 
     /**
